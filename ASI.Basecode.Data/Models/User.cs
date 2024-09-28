@@ -5,6 +5,7 @@ namespace ASI.Basecode.Data.Models
 {
     public partial class User
     {
+        // test change
         public int Id { get; set; }
         public string UserId { get; set; }
         public string Name { get; set; }
