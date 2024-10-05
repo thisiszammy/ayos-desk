@@ -13,7 +13,7 @@ namespace ASI.Basecode.Data.Interfaces
         /// <value>
         /// The database.
         /// </value>
-        DbContext Database { get; }
+        AyohaDbContext Database { get; }
         /// <summary>
         /// Saves the changes to database
         /// </summary>

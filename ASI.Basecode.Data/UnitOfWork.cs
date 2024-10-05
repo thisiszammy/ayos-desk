@@ -13,13 +13,13 @@ namespace ASI.Basecode.Data
         /// <summary>
         /// Gets the database context
         /// </summary>
-        public DbContext Database { get; private set; }
+        public AyohaDbContext Database { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the UnitOfWork class.
         /// </summary>
         /// <param name="serviceContext">The service context.</param>
-        public UnitOfWork(AsiBasecodeDBContext serviceContext)
+        public UnitOfWork(AyohaDbContext serviceContext)
         {
             Database = serviceContext;
         }

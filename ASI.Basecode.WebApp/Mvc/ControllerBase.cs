@@ -58,7 +58,7 @@ namespace ASI.Basecode.WebApp.Mvc
         /// </summary>
         public string UserId
         {
-            get { return User.FindFirst(ClaimTypes.NameIdentifier).Value; }
+            get { return User.FindFirst(ClaimTypes.NameIdentifier)?.Value; }
         }
 
         /// <summary>

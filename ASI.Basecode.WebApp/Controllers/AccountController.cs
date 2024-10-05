@@ -85,10 +85,10 @@ namespace ASI.Basecode.WebApp.Controllers
 
             //User user = null;
 
-            User user = new() { Id = 0, UserId = "0", Name = "Name", Password = "Password" };
+            //User user = new() { Id = Guid.NewGuid(), UserId = "0", Name = "Name", Password = "Password" };
             
-            await this._signInManager.SignInAsync(user);
-            this._session.SetString("UserName", model.UserId);
+            //await this._signInManager.SignInAsync(user);
+            //this._session.SetString("UserName", model.UserId);
 
             return RedirectToAction("Index", "Home");
 
@@ -109,7 +109,7 @@ namespace ASI.Basecode.WebApp.Controllers
             return View();*/
         }
 
-        [HttpGet]
+        [HttpGet("/register")]
         [AllowAnonymous]
         public IActionResult Register()
         {
@@ -122,7 +122,7 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             try
             {
-                _userService.AddUser(model);
+                _userService.AddUser(model, (UserId is null) ? Guid.Empty : Guid.Parse(UserId));
                 return RedirectToAction("Login", "Account");
             }
             catch(InvalidDataException ex)
