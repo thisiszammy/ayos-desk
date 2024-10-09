@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="confirmpassword">Confirm Password</label>
-                                <input type="password" id="confirmpassword" class="form-control" 
+                                <input type="password" id="confirmpassword" class="form-control"
                                        asp-for="ConfirmPassword" placeholder="Confirm Password" />
                                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                             </div>
@@ -66,5 +66,6 @@
         if (errorMessage) {
             toastr.error(errorMessage);
         }
+        //test push
     </script>
 }
