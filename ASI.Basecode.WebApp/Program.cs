@@ -37,4 +37,5 @@ app.MapControllers();
 app.MapRazorPages();
 
 // Run application
+
 app.Run();

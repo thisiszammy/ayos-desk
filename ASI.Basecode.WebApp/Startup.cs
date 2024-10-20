@@ -86,7 +86,7 @@ namespace ASI.Basecode.WebApp
             services.AddDbContext<AyohaDbContext>(options =>
             {
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"),
+                    Configuration.GetConnectionString("RgeaneConnection"),
                     sqlServerOptions => sqlServerOptions.CommandTimeout(120));
             });
 
