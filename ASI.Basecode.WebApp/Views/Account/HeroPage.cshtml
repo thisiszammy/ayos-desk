@@ -1,0 +1,221 @@
+﻿
+
+@{
+    ViewBag.LoginView = true;
+    ViewData["Title"] = "Hero Page";
+}
+
+<body>
+    <div class="container">
+        <img src="~/img/HERO-PAGE.png" alt="bg">
+    <div class="header">
+                <img src="~/img/ayoha.png" alt="Ayoha Logo" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="/Account/Home" class="@((ViewData["ActivePage"] as string == "Index") ? "active" : "")">Home</a></li>
+                        <li><a href="/Account/About" class="@((ViewData["ActivePage"] as string == "About") ? "active" : "")">About Us</a></li>
+                        <li><a asp-controller="Account" asp-action="Login" class="login">Log in</a></li>
+                    </ul>
+                </nav>
+    </div>
+
+    <div class="content">
+        <h1>MO AYO MI<br>UG BISAN UNSA :D</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis, purus sed tincidunt fermentum, sem turpis viverra nunc, et malesuada lorem sapien in libero.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis, purus sed tincidunt fermentum, sem turpis viverra nunc, et malesuada lorem sapien in libero.
+        </p>
+        <a href="#" class="learn-more">Learn More</a>
+    </div>
+
+    <div class="shapes">
+        <div class="shape" style="background-image: url('img/1.png');"></div>
+        <div class="shape" style="background-image: url('img/22.jpg');"></div>
+        <div class="shape" style="background-image: url('img/33.jpg');"></div>
+    </div>
+
+</body>
+
+@section scripts {
+    <script>
+        // Check for error message and display Toastr notification
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+}
+
+<style>
+    html, body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        margin-left: 10%;
+        overflow: hidden; /* Disable scroll */
+        background-color: white;
+    }
+
+    .container {
+        position: fixed; /* Fix the image in place */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end; /* Align the image */
+        align-items: center;
+    }
+
+        .container img {
+            max-width: 200%;
+            width: auto;
+            height: auto;
+            margin-right:-75%;
+            object-fit: cover;
+        }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+        background-color: rgba(253, 253, 253, 0);
+        position: absolute;
+        margin-right: -75%;
+        top: 0;
+        width: 175%;
+        height: 10%;
+    }
+
+    .logo {
+        max-height: 130px;
+    }
+
+    nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: right; /* Center nav items */
+        margin-right: 20%;
+    }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 150px; /* Adjust spacing */
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #282937;
+                font-size: 1.3em;
+                font-family: 'Inter', sans-serif;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover,
+                nav ul li a.active {
+                    color: #632379;
+                    text-decoration: underline;
+                }
+
+            nav ul li .login {
+                background-color: #632379;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 20px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                nav ul li .login:hover {
+                    background-color: #cdbae5;
+                }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 5%; /* Position to the left side */
+        transform: translateY(-65%); /* Vertically center */
+    }
+
+        .content h1 {
+            font-size: 7em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            line-height: 1.2;
+            margin: 0;
+            color: #32113f;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            max-width: 1000px;
+            margin-top: 10px;
+            line-height: 1.5;
+            color: rgb(51, 51, 51);
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 150px; /* Adjust spacing */
+        }
+
+            .content ul li a {
+                text-decoration: none;
+                color: #282937;
+                font-size: 1.5em;
+                font-family: 'Inter', sans-serif;
+                transition: color 0.3s;
+            }
+
+
+    .learn-more {
+        display: inline-block;
+        background-color: #632379;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: 'Inter', sans-serif;
+        margin-top: 20px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .learn-more:hover {
+            background-color: #cdbae5;
+        }
+
+    /* Shapes container */
+    .shapes {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 5%; /* Position to the left side */
+        gap: 5em;
+        transform: translateY(150%);
+    }
+
+    /* Individual shape styles */
+    .shape {
+        width: 250px;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        /* Hover effect */
+        .shape:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+</style>

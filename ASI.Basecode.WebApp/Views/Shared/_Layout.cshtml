@@ -5,26 +5,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    <title> Ayoha </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="icon" type="image/x-icon" href="~/img/ay-o-ha.ico" />
     @RenderSection("Styles", required: false)
 </head>
-<body>
+<bodystyle ="background-color:white">
     @Html.Partial("_Header")
     <div class="container">
         <main role="main">
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            @Copyright
-        </div>
-    </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,5 +41,5 @@
         };
     </script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
+</bodystyle>
 </html>
